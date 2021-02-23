@@ -1,0 +1,30 @@
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.6rem;
+  border-bottom: 2px solid black;
+  padding-bottom: 1%;
+}
+
+.nav-links li {
+  display: flex;
+  margin: 0 2%;
+  text-decoration: none;
+}
+
+.nav-link {
+  text-shadow: 1px 1px black;
+  text-decoration: none;
+  color: lightcoral;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-link:hover {
+  text-shadow: 2px 2px black;
+}
+
+.nav-link:visited {
+  text-decoration: none;
+  color: lightcoral;
+}
