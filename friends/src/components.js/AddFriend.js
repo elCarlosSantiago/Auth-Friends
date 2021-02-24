@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import './../styles/AddFriend.css';
+import { axiosWithAuth } from './../utils/axiosWithAuth';
 
-function AddFriend() {
+function AddFriend(props) {
   const [newFriend, setNewFriend] = useState({
     id: '',
     name: '',
@@ -17,9 +19,20 @@ function AddFriend() {
     });
   };
 
+  const addFriend = () => {
+    axiosWithAuth()
+      .post('/api/friends', newFriend)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        debugger;
+      });
+  };
+
   return (
     <div className="add-friend-container">
-      <form className="add-friend-form">
+      <form className="add-friend-form" onSubmit={addFriend}>
         <input
           placeholder="Name?"
           type="text"
@@ -43,6 +56,7 @@ function AddFriend() {
           onChange={onChange}
           value={newFriend.email}
         />
+        <button>Add Friend!</button>
       </form>
     </div>
   );
