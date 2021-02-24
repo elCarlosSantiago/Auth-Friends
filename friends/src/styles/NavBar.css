@@ -1,9 +1,15 @@
+.nav-bar {
+  background-color: #00c790;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+}
+
 .nav-links {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   font-size: 1.6rem;
-  border-bottom: 2px solid black;
   padding-bottom: 1%;
 }
 

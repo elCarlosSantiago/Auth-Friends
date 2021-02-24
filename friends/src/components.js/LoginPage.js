@@ -8,6 +8,7 @@ function LoginPage() {
     username: '',
     password: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const [error, setError] = useState('');
 
@@ -24,17 +25,18 @@ function LoginPage() {
 
   const login = (evt) => {
     evt.preventDefault();
-
+    setIsLoading(true);
     axios
       .post('http://localhost:5000/api/login', credentials)
       .then((res) => {
         console.log(res);
         localStorage.setItem('token', JSON.stringify(res.data.payload));
         history.push('/friends');
+        setIsLoading(false);
       })
       .catch((err) => {
-        // setError(err.response.data.error);
-        debugger;
+        setError(err.response.data.error);
+        setIsLoading(false);
       });
   };
 
@@ -59,8 +61,12 @@ function LoginPage() {
             onChange={onChange}
           />
         </label>
-        <p style={{ color: `red`, fontSize: '12px' }}>{error}</p>
-        <button className="login-btn">Log in</button>
+        {!isLoading ? (
+          <button className="login-btn">Log in</button>
+        ) : (
+          <button className="login-btn loading">Loading</button>
+        )}
+        {error && <p style={{ color: `red`, fontSize: '12px' }}>{error}</p>}
       </form>
     </div>
   );

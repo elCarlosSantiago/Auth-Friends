@@ -1,0 +1,47 @@
+.friend-page-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: #ffa345;
+  border-bottom: 2px solid black;
+  padding-bottom: 2%;
+}
+
+.friend-page-container h1 {
+  font-size: 2rem;
+  margin: 1.5% auto 2%;
+  text-transform: uppercase;
+}
+
+.friend-page-container h2 {
+  font-size: 1.6rem;
+}
+
+.friend-container {
+  display: flex;
+  width: 75%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.friend {
+  border: 2px solid black;
+  border-radius: 45px;
+  width: 30%;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 2%;
+  padding: 1%;
+  box-shadow: 1px 1px 1px black;
+  transition: all 0.4s ease-in-out;
+  background-color: #51ff77;
+}
+
+.friend:hover {
+  box-shadow: 3px 3px 1px black;
+  transform: scale(1.05);
+}
+
+.friend p {
+  padding: 2% 2% 3% 2%;
+}

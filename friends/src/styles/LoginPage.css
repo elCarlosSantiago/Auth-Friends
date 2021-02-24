@@ -1,11 +1,11 @@
 .login-container {
   display: flex;
   justify-content: flex-end;
+  border-bottom: 2px solid black;
 }
 
 .login-form {
   display: flex;
-  /* border: 1px solid red; */
   flex-flow: column nowrap;
   align-items: center;
   margin-right: 2%;
@@ -13,6 +13,7 @@
 
 .login-form label {
   font-size: 1.5rem;
+  margin-top: 1%;
 }
 
 .login-form input {
@@ -32,6 +33,11 @@
   transition: all 0.4s ease-in-out;
   font-size: 1.3rem;
   font-family: monospace;
+  margin: 4% auto 5%;
+}
+
+.login-btn .loading {
+  background-color: red;
 }
 
 .login-btn:hover {
